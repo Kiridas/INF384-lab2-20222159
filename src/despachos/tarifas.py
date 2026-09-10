@@ -70,6 +70,33 @@ def calcular(envio: Envio) -> float:
 
     return round(total, 2)
 
+def nivel_riesgo(envio: Envio) -> str:
+    """Clasifica el envio en un nivel de riesgo segun zona, peso, valor y urgencia."""
+    puntaje = 0
+
+    if envio.zona in ZONAS_ALEJADAS:
+        puntaje += 2
+    elif envio.zona == "sierra":
+        puntaje += 1
+
+    if envio.peso_kg > 20:
+        puntaje += 2
+    elif envio.peso_kg > 10:
+        puntaje += 1
+
+    if envio.valor_declarado > 1000:
+        puntaje += 3
+    elif envio.valor_declarado > 500:
+        puntaje += 1
+
+    if envio.urgente:
+        puntaje += 1
+
+    if puntaje >= 6:
+        return "alto"
+    if puntaje >= 3:
+        return "medio"
+    return "bajo"
 
 def desglose(envio: Envio) -> dict[str, float]:
     base = TARIFA_BASE
