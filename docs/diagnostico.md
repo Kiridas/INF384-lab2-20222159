@@ -23,4 +23,5 @@ Alcanzables sin tocar el despliegue: Lead Time for Changes y Change Failure Rate
 Elegimos Lead Time for Changes, porque la etapa de seguridad y la preparacion del expediente son la parte mas pesada del ciclo completo.
 
 # El proxy
-Para validar el cambio de la actualización del pipeline se usará la linea base .md en la que se registraron las ejecuciones antes de los cambios a realizar
+Para validar el cambio de la actualización del pipeline se usará la linea base .md en la que se registraron las ejecuciones antes de los cambios a realizar. Por lo mismo el tiempo medio de dichas ejecuciones es:
+- 1m 24s
